@@ -16,8 +16,6 @@ const ArticleSchema: React.FC<ArticleSchemaProps> = ({
     imageUrl = 'https://www.onerepmaxcalculator.org/og-image.jpg', // Default fallback
 }) => {
     const schema = {
-        '@context': 'https://schema.org',
-        '@type': 'Article',
         '@type': 'Article',
         headline: title,
         description: description,

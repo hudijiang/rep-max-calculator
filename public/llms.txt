@@ -1,0 +1,17 @@
+# One Rep Max Calculator
+
+> A comprehensive tool and training resource for powerlifting and strength training.
+
+## Core Tools
+- [1RM Calculator](https://www.onerepmaxcalculator.org/) - Calculate One Rep Max using Epley, Brzycki, and other formulas.
+- [Percentage Table](https://www.onerepmaxcalculator.org/#table) - 50-100% load chart based on 1RM.
+
+## Training Guides
+- [Periodization Guide](https://www.onerepmaxcalculator.org/training/periodization) - Macrocycle planning (Hypertrophy -> Strength -> Peaking).
+- [Hypertrophy Block](https://www.onerepmaxcalculator.org/training/hypertrophy) - Volume training phase (65-75% 1RM).
+- [Strength Block](https://www.onerepmaxcalculator.org/training/strength) - Intensity training phase (80-90% 1RM).
+- [Peaking Program](https://www.onerepmaxcalculator.org/training/peaking) - Competition prep phase (90-100% 1RM).
+
+## Beginner Resources
+- [Beginner's Guide](https://www.onerepmaxcalculator.org/guides/beginner-1rm-guide) - Safe testing protocols for new lifters.
+- [Bench Press Tips](https://www.onerepmaxcalculator.org/guides/bench-press-1rm-tips) - Technical cues to increase bench press max.
