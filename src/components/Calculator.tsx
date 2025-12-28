@@ -140,15 +140,7 @@ const Calculator: React.FC = () => {
                 {formula === 'brzycki' && <div className="absolute top-3 right-3 w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.5)]"></div>}
               </button>
             </div>
-            <p className="mt-4 text-center">
-              <button
-                type="submit"
-                className="bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-8 rounded-full transition-colors shadow-lg shadow-blue-900/20"
-                onClick={() => { /* Trigger calc logic if needed or just scroll/focus */ }}
-              >
-                Calculate your 1RM now
-              </button>
-            </p>
+
           </div>
         </div>
 
@@ -193,7 +185,10 @@ const Calculator: React.FC = () => {
                               row.percentage >= 80 ? '8' :
                                 row.percentage >= 75 ? '10' :
                                   row.percentage >= 70 ? '12' :
-                                    '15+'}
+                                    row.percentage >= 65 ? '15' :
+                                      row.percentage >= 60 ? '20' :
+                                        row.percentage >= 55 ? '25' :
+                                          '30+'}
                     </div>
                   </div>
                 ))}
