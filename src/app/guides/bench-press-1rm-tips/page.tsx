@@ -17,7 +17,7 @@ export default function BenchTipsPage() {
             <ArticleSchema
                 title="Bench Press 1RM Tips | How to Increase Your Bench Press Max"
                 description="Stuck at a plateau? Use these technical cues and a 6-week peaking program to increase your Bench Press 1RM safely and effectively."
-                imageUrl="https://www.1rm-calculator.com/generated/bench_press_setup_dark.png"
+                imageUrl="https://www.onerepmaxcalculator.org/generated/bench_press_setup_dark.png"
                 datePublished="2024-01-01"
             />
 

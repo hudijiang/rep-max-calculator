@@ -13,7 +13,7 @@ const ArticleSchema: React.FC<ArticleSchemaProps> = ({
     description,
     datePublished = new Date().toISOString(),
     authorName = '1RM Calculator Team',
-    imageUrl = 'https://www.1rm-calculator.com/og-image.jpg', // Default fallback
+    imageUrl = 'https://www.onerepmaxcalculator.org/og-image.jpg', // Default fallback
 }) => {
     const schema = {
         '@context': 'https://schema.org',
@@ -24,14 +24,14 @@ const ArticleSchema: React.FC<ArticleSchemaProps> = ({
         author: {
             '@type': 'Person',
             name: authorName,
-            url: 'https://www.1rm-calculator.com',
+            url: 'https://www.onerepmaxcalculator.org',
         },
         publisher: {
             '@type': 'Organization',
             name: '1RM Calculator',
             logo: {
                 '@type': 'ImageObject',
-                url: 'https://www.1rm-calculator.com/logo.png',
+                url: 'https://www.onerepmaxcalculator.org/logo.png',
             },
         },
         image: imageUrl,
@@ -39,7 +39,7 @@ const ArticleSchema: React.FC<ArticleSchemaProps> = ({
         dateModified: new Date().toISOString(),
         mainEntityOfPage: {
             '@type': 'WebPage',
-            '@id': 'https://www.1rm-calculator.com',
+            '@id': 'https://www.onerepmaxcalculator.org',
         },
     };
 
