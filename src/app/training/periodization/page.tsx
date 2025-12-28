@@ -103,19 +103,19 @@ export default function PeriodizationPage() {
                             <span className="absolute left-[-9px] top-1 w-4 h-4 rounded-full bg-green-500 border-4 border-[#050505]"></span>
                             <h3 className="text-2xl font-bold text-white mt-0 mb-2">Phase 1: Hypertrophy</h3>
                             <p className="text-green-400 font-mono text-sm mb-2">Weeks 1-4 • 65-75% 1RM</p>
-                            <p className="text-gray-400 text-sm">Build the muscle base. High reps, isolation movements, metabolic focus. <Link href="/training/hypertrophy" className="text-green-400 underline">Read more</Link>.</p>
+                            <p className="text-gray-400 text-sm">Build the muscle base. High reps, isolation movements, metabolic focus. <Link href="/training/hypertrophy" className="text-green-400 underline">Read Hypertrophy Guide</Link>.</p>
                         </div>
                         <div className="relative pl-8 md:pl-12">
                             <span className="absolute left-[-9px] top-1 w-4 h-4 rounded-full bg-blue-500 border-4 border-[#050505]"></span>
                             <h3 className="text-2xl font-bold text-white mt-0 mb-2">Phase 2: Strength</h3>
                             <p className="text-blue-400 font-mono text-sm mb-2">Weeks 5-8 • 80-90% 1RM</p>
-                            <p className="text-gray-400 text-sm">Teach the muscle to fire. Heavier compounds, lower reps, neural focus. <Link href="/training/strength" className="text-blue-400 underline">Read more</Link>.</p>
+                            <p className="text-gray-400 text-sm">Teach the muscle to fire. Heavier compounds, lower reps, neural focus. <Link href="/training/strength" className="text-blue-400 underline">View Strength Program</Link>.</p>
                         </div>
                         <div className="relative pl-8 md:pl-12">
                             <span className="absolute left-[-9px] top-1 w-4 h-4 rounded-full bg-purple-500 border-4 border-[#050505]"></span>
                             <h3 className="text-2xl font-bold text-white mt-0 mb-2">Phase 3: Peaking</h3>
                             <p className="text-purple-400 font-mono text-sm mb-2">Weeks 9-10 • 90-100% 1RM</p>
-                            <p className="text-gray-400 text-sm">Test preparation. Heavy singles, specific practice, tapering. <Link href="/training/peaking" className="text-purple-400 underline">Read more</Link>.</p>
+                            <p className="text-gray-400 text-sm">Test preparation. Heavy singles, specific practice, tapering. <Link href="/training/peaking" className="text-purple-400 underline">See Peaking Strategy</Link>.</p>
                         </div>
                         <div className="relative pl-8 md:pl-12">
                             <span className="absolute left-[-9px] top-1 w-4 h-4 rounded-full bg-gray-500 border-4 border-[#050505]"></span>

@@ -18,7 +18,7 @@ const ArticleSchema: React.FC<ArticleSchemaProps> = ({
     const schema = {
         '@context': 'https://schema.org',
         '@type': 'Article',
-        heading: title,
+        '@type': 'Article',
         headline: title,
         description: description,
         author: {

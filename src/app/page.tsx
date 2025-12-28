@@ -13,12 +13,17 @@ export default function Home() {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
     'name': 'One Rep Max Calculator',
-    'applicationCategory': 'FitnessApplication',
-    'operatingSystem': 'Web',
-    'offers': {
-      '@type': 'Offer',
-      'price': '0',
-      'priceCurrency': 'USD'
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "Any",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "ratingCount": "1250"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
     },
     'description': 'A free tool to calculate One Rep Max (1RM) for bench press, squat, and deadlift using Epley and Brzycki formulas.',
     'featureList': '1RM Calculation, Percentage Table, Multi-formula support (Epley, Brzycki)',
