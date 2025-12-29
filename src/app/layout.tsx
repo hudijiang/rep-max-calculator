@@ -6,6 +6,8 @@ export const metadata: Metadata = {
   description: "Calculate your 1RM for Bench Press, Squat, and Deadlift.",
 };
 
+import { GoogleAnalytics } from '@next/third-parties/google';
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -18,6 +20,7 @@ export default function RootLayout({
       >
         {children}
       </body>
+      <GoogleAnalytics gaId="G-GGVBYH7HDX" />
     </html>
   );
 }
