@@ -3,9 +3,25 @@ import Calculator from '@/components/Calculator';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'One Rep Max Calculator (1RM) – Accurate Bench, Squat & Deadlift 1RM Calc',
-  description: 'Calculate your One Rep Max (1RM) accurately for bench press, squat, and deadlift. Use our free, easy-to-use 1RM calculator to get instant training percentages and optimize your strength program.',
-  keywords: ['one rep max calculator', '1rm calculator', 'bench press 1rm calculator', 'squat 1rm calculator', 'deadlift calculator', 'epley formula', 'brzycki formula', 'strength training', 'powerlifting', 'hypertrophy'],
+  title: 'One Rep Max Calculator: Accurate Bench, Squat & Deadlift 1RM',
+  description: 'Calculate your One Rep Max (1RM) accurately for bench press, squat, and deadlift. Free tool with Epley & Brzycki formulas, percentage charts, and training guides.',
+  keywords: ['one rep max calculator', '1rm calculator', 'bench press 1rm', 'squat 1rm', 'deadlift 1rm', 'powerlifting calculator', 'strength training', 'epley formula'],
+  alternates: {
+    canonical: 'https://www.onerepmaxcalculator.org',
+  },
+  openGraph: {
+    title: 'One Rep Max Calculator: Accurate Bench, Squat & Deadlift 1RM',
+    description: 'The most accurate 1RM calculator for serious lifters. Optimize your training intensity today.',
+    url: 'https://www.onerepmaxcalculator.org',
+    siteName: '1RM Calculator',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'One Rep Max Calculator',
+    description: 'Calculate your true 1RM and get personalized strength training percentages.',
+  },
 };
 
 export default function Home() {
@@ -263,6 +279,52 @@ export default function Home() {
         </section>
       </div>
 
+    </div>
+
+      {/* SEO Content Section - Text Rich */ }
+      <section className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-24 prose prose-invert prose-lg">
+        <h2 className="text-3xl font-bold text-white mb-8 text-center">Comprehensive 1RM Guide</h2>
+        
+        <div className="space-y-8 text-gray-300">
+          <div>
+            <h3 className="text-xl font-bold text-white mb-2">Why Calculate Your One Rep Max?</h3>
+            <p>
+              Knowing your <strong>One Rep Max (1RM)</strong> is crucial for designing an effective training program. It allows you to:
+            </p>
+            <ul className="list-disc pl-5 space-y-2 mt-2">
+              <li>Determine appropriate weights for hypertrophy (muscle growth) vs. strength training.</li>
+              <li>Track your strength progress over time without constantly testing maximal loads.</li>
+              <li>Prevent injury by avoiding testing heavier weights than you can handle safely.</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-bold text-white mb-2">Understanding the Formulas</h3>
+            <p>
+              Our calculator uses two of the most scientifically validated formulas:
+            </p>
+            <p className="mt-2">
+              <strong>1. The Epley Formula:</strong> Developed in 1985, this is widely considered the standard for general lifting. It is particularly accurate for rep ranges between 3 and 10. We recommend this for most compound movements like the Bench Press and Squat.
+            </p>
+            <p className="mt-2">
+              <strong>2. The Brzycki Formula:</strong> Another popular method that helps mitigate the exponential scaling of other formulas. It is often preferred for converting higher rep sets (10+) into a 1RM estimate, though accuracy inherently decreases as reps increase beyond 10.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-bold text-white mb-2">Safety Guidelines</h3>
+            <p>
+              While 1RM calculations are useful tools, they are estimates. Always ensure you:
+            </p>
+            <ul className="list-disc pl-5 space-y-2 mt-2">
+              <li>Have a spotter when testing near-maximal loads.</li>
+              <li>Warm up thoroughly before any heavy lifting session.</li>
+              <li>Maintain proper form; if your form breaks down, the rep shouldn&#39;t count toward your calculation.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
       <footer className="border-t border-gray-900 bg-black py-12">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h2 className="text-2xl font-bold text-white mb-4 tracking-tight">One Rep Max Calculator</h2>
@@ -274,6 +336,6 @@ export default function Home() {
           </p>
         </div>
       </footer>
-    </main>
+    </main >
   );
 }
