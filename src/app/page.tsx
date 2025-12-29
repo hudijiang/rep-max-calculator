@@ -277,14 +277,13 @@ export default function Home() {
             </div>
           </div>
         </section>
+
       </div>
 
-    </div>
-
-      {/* SEO Content Section - Text Rich */ }
+      {/* SEO Content Section - Text Rich */}
       <section className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-24 prose prose-invert prose-lg">
         <h2 className="text-3xl font-bold text-white mb-8 text-center">Comprehensive 1RM Guide</h2>
-        
+
         <div className="space-y-8 text-gray-300">
           <div>
             <h3 className="text-xl font-bold text-white mb-2">Why Calculate Your One Rep Max?</h3>
