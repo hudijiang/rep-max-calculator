@@ -255,8 +255,11 @@ export default function Home() {
                   Focus on the &quot;Big Three&quot;: Squat, Bench Press, and Deadlift. Overhead Press is also a great candidate. Isolation exercises (like curls) are less suitable for 1RM testing.
                 </p>
               </div>
-              <Link href="/guides/bench-press-1rm-tips" className="text-blue-400 text-sm font-semibold hover:text-blue-300 flex items-center gap-1">
+              <Link href="/guides/bench-press-1rm-tips" className="text-blue-400 text-sm font-semibold hover:text-blue-300 flex items-center gap-1 mb-2">
                 Bench Press 1RM Tips <span aria-hidden="true">&rarr;</span>
+              </Link>
+              <Link href="/deadlift-1rm-calculator" className="text-purple-400 text-sm font-semibold hover:text-purple-300 flex items-center gap-1">
+                Deadlift 1RM Calculator <span aria-hidden="true">&rarr;</span>
               </Link>
             </div>
             <div className="bg-gray-900/30 p-6 rounded-2xl border border-gray-800 hover:border-blue-900/50 transition-colors flex flex-col justify-between">

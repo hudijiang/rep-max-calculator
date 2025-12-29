@@ -10,7 +10,11 @@ interface OneRepMaxResult {
   percentages: { percentage: number; weight: number }[];
 }
 
-const Calculator: React.FC = () => {
+interface CalculatorProps {
+  title?: string;
+}
+
+const Calculator: React.FC<CalculatorProps> = ({ title = '1RM Calculator' }) => {
   const [weight, setWeight] = useState<number | ''>('');
   const [reps, setReps] = useState<number | ''>('');
   const [unit, setUnit] = useState<Unit>('kg');
@@ -47,7 +51,7 @@ const Calculator: React.FC = () => {
       <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur opacity-30 animate-pulse"></div>
 
       <div className="relative bg-black/80 backdrop-blur-xl border border-white/10 p-6 sm:p-8 rounded-2xl shadow-2xl transition-all duration-500 ease-in-out">
-        <h2 className="text-3xl font-bold mb-8 text-center text-white tracking-tight">1RM Calculator</h2>
+        <h2 className="text-3xl font-bold mb-8 text-center text-white tracking-tight">{title}</h2>
 
         <div className="space-y-6">
           {/* Unit Switcher */}
