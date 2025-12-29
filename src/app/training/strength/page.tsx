@@ -186,6 +186,20 @@ export default function StrengthPage() {
                         </details>
                     </div>
 
+                    {/* Phase Navigation */}
+                    <div className="grid md:grid-cols-2 gap-6 mt-12 not-prose">
+                        <Link href="/training/hypertrophy" className="group p-6 bg-gray-900/40 rounded-2xl border border-gray-800 hover:border-green-500/50 transition-all block">
+                            <h3 className="text-lg font-bold text-gray-400 group-hover:text-green-400 mb-2 transition-colors">&larr; Previous: Phase 1</h3>
+                            <p className="text-white font-bold text-xl">Hypertrophy</p>
+                            <p className="text-sm text-gray-500 mt-2">Build the muscle base.</p>
+                        </Link>
+                        <Link href="/training/peaking" className="group p-6 bg-gradient-to-br from-gray-900 to-purple-900/20 rounded-2xl border border-gray-800 hover:border-purple-500/50 transition-all block">
+                            <h3 className="text-lg font-bold text-blue-400 group-hover:text-purple-400 mb-2 transition-colors">Next: Phase 3 &rarr;</h3>
+                            <p className="text-white font-bold text-xl">Peaking</p>
+                            <p className="text-sm text-gray-500 mt-2">Realize your max strength.</p>
+                        </Link>
+                    </div>
+
                     <hr className="border-gray-800 my-12" />
 
                     <div className="flex flex-col md:flex-row gap-8 text-sm text-gray-500">

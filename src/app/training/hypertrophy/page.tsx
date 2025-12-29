@@ -187,6 +187,15 @@ export default function HypertrophyPage() {
                         {/* ... */}
                     </div>
 
+                    {/* Next Phase Navigation */}
+                    <div className="mt-12 p-6 bg-gradient-to-r from-gray-900 to-blue-900/20 rounded-2xl border border-gray-800 hover:border-blue-500/50 transition-all group not-prose">
+                        <h3 className="text-xl font-bold text-white mt-0 mb-2">Next Phase: Strength &rarr;</h3>
+                        <p className="text-gray-400 mb-4">You've built the muscle (Engine). Now learn how to make it stronger (Horsepower) with high-intensity training.</p>
+                        <Link href="/training/strength" className="inline-block bg-blue-600 hover:bg-blue-500 text-white font-bold py-2 px-6 rounded-lg transition-colors no-underline">
+                            Start Strength Phase
+                        </Link>
+                    </div>
+
                     <hr className="border-gray-800 my-12" />
 
                     {/* Footer Omitted - Same as before */}

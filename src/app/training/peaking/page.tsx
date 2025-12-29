@@ -181,6 +181,20 @@ export default function PeakingPage() {
                         </details>
                     </div>
 
+                    {/* Cycle Navigation */}
+                    <div className="mt-12 p-8 bg-gray-900/30 rounded-2xl border border-gray-800 text-center not-prose">
+                        <h3 className="text-2xl font-bold text-white mt-0 mb-4">What's Next?</h3>
+                        <p className="text-gray-400 mb-6">After testing your 1RM, take a deload week and then start a new cycle to continue making gains.</p>
+                        <div className="flex flex-col sm:flex-row justify-center gap-4">
+                            <Link href="/training/hypertrophy" className="inline-block bg-gray-800 hover:bg-gray-700 text-white font-bold py-3 px-8 rounded-xl transition-colors no-underline border border-gray-700">
+                                Restart: Phase 1 (Hypertrophy)
+                            </Link>
+                            <Link href="/training/strength" className="inline-block bg-transparent hover:bg-gray-800/50 text-blue-400 hover:text-blue-300 font-bold py-3 px-8 rounded-xl transition-colors no-underline border border-blue-900/30">
+                                Review Phase 2 (Strength)
+                            </Link>
+                        </div>
+                    </div>
+
                     <hr className="border-gray-800 my-12" />
 
                     <div className="flex flex-col md:flex-row gap-8 text-sm text-gray-500">
