@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   description: "Calculate your 1RM for Bench Press, Squat, and Deadlift.",
 };
 
+import Navbar from '@/components/Navbar';
 import { GoogleAnalytics } from '@next/third-parties/google';
 
 export default function RootLayout({
@@ -18,6 +19,7 @@ export default function RootLayout({
       <body
         className={`antialiased bg-black text-gray-100`}
       >
+        <Navbar />
         {children}
       </body>
       <GoogleAnalytics gaId="G-GGVBYH7HDX" />

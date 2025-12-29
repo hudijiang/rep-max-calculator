@@ -35,12 +35,7 @@ export default function DeadliftCalculatorPage() {
                 <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-900/10 rounded-full blur-[120px]"></div>
             </div>
 
-            <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 space-y-12">
-                <nav className="flex items-center justify-between text-sm">
-                    <Link href="/" className="text-gray-400 hover:text-white transition-colors flex items-center gap-2">
-                        <span aria-hidden="true">&larr;</span> Back to Main Calculator
-                    </Link>
-                </nav>
+            <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 space-y-12">
 
                 <header className="space-y-6 text-center sm:text-left">
                     <div className="inline-flex items-center space-x-2 bg-purple-900/20 border border-purple-800/50 rounded-full px-4 py-1.5 backdrop-blur-sm">

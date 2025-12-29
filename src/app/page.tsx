@@ -145,6 +145,13 @@ export default function Home() {
                   Your <strong>One Rep Max (1RM)</strong> is the theoretical limit of maximum weight you can lift for a single, clean repetition.
                   It serves as the baseline for all <strong>percentage-based training</strong>, ensuring every set you perform is optimized for your specific goals suitable for powerlifting and bodybuilding.
                 </p>
+
+                <div className="mt-8 p-4 bg-purple-900/10 border border-purple-900/30 rounded-xl inline-block">
+                  <p className="text-sm text-gray-400 mb-2"><strong>Looking for Deadlift specifics?</strong></p>
+                  <Link href="/deadlift-1rm-calculator" className="flex items-center gap-2 text-purple-400 font-bold hover:text-purple-300 transition-colors">
+                    Use our Specialized Deadlift 1RM Calculator <span aria-hidden="true">&rarr;</span>
+                  </Link>
+                </div>
               </div>
             </div>
 
@@ -255,8 +262,11 @@ export default function Home() {
                   Focus on the &quot;Big Three&quot;: Squat, Bench Press, and Deadlift. Overhead Press is also a great candidate. Isolation exercises (like curls) are less suitable for 1RM testing.
                 </p>
               </div>
-              <Link href="/guides/bench-press-1rm-tips" className="text-blue-400 text-sm font-semibold hover:text-blue-300 flex items-center gap-1 mb-2">
-                Bench Press 1RM Tips <span aria-hidden="true">&rarr;</span>
+              <Link href="/bench-press-1rm-calculator" className="text-blue-400 text-sm font-semibold hover:text-blue-300 flex items-center gap-1 mb-2">
+                Bench Press 1RM Calculator <span aria-hidden="true">&rarr;</span>
+              </Link>
+              <Link href="/squat-1rm-calculator" className="text-green-400 text-sm font-semibold hover:text-green-300 flex items-center gap-1 mb-2">
+                Squat 1RM Calculator <span aria-hidden="true">&rarr;</span>
               </Link>
               <Link href="/deadlift-1rm-calculator" className="text-purple-400 text-sm font-semibold hover:text-purple-300 flex items-center gap-1">
                 Deadlift 1RM Calculator <span aria-hidden="true">&rarr;</span>
