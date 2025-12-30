@@ -65,20 +65,25 @@ const Navbar = () => {
                             </button>
 
                             {/* Dropdown Menu */}
-                            <div className="absolute top-full right-0 pt-2 w-56 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200">
-                                <div className="bg-gray-900 border border-gray-800 rounded-xl shadow-xl overflow-hidden p-1">
+                            <div className="absolute top-full right-0 pt-4 w-64 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200">
+                                <div className="bg-[#0A0A0A]/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden p-2">
+                                    <div className="px-3 py-2 text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Calculators</div>
                                     {calculators.map((item) => (
                                         <Link
                                             key={item.name}
                                             href={item.href}
-                                            className="flex items-center gap-3 px-4 py-3 text-sm text-gray-300 hover:bg-white/5 hover:text-blue-400 rounded-lg transition-colors"
+                                            className="flex items-center gap-3 px-3 py-3 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white rounded-xl transition-all group/item"
                                         >
-                                            <span>{item.icon}</span>
-                                            {item.name}
+                                            <span className="text-xl group-hover/item:scale-110 transition-transform">{item.icon}</span>
+                                            <div>
+                                                <div className="text-gray-200 group-hover/item:text-blue-400 transition-colors">{item.name}</div>
+                                            </div>
                                         </Link>
                                     ))}
-                                    <div className="h-px bg-gray-800 my-1"></div>
-                                    <div className="px-4 py-2 text-xs text-gray-500 text-center">More tools comming soon</div>
+                                    <div className="h-px bg-white/10 my-2 mx-2"></div>
+                                    <div className="px-3 py-3 text-xs text-gray-500 text-center font-medium bg-white/5 rounded-lg border border-white/5 border-dashed">
+                                        More tools coming soon...
+                                    </div>
                                 </div>
                             </div>
                         </div>
