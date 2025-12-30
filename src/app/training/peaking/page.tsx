@@ -24,7 +24,7 @@ export default function PeakingPage() {
                 <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-pink-900/10 rounded-full blur-[120px]"></div>
             </div>
 
-            <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 space-y-12">
+            <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 space-y-12">
                 <nav className="flex items-center justify-between text-sm">
                     <Link href="/" className="text-gray-400 hover:text-white transition-colors flex items-center gap-2">
                         <span aria-hidden="true">&larr;</span> Back to 1RM Calculator
