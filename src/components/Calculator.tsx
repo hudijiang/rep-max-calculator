@@ -1,6 +1,7 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import Link from 'next/link';
 
 type Unit = 'kg' | 'lbs';
 type Formula = 'epley' | 'brzycki';
@@ -23,11 +24,48 @@ const Calculator: React.FC<CalculatorProps> = ({ title = '1RM Calculator' }) => 
   const [result, setResult] = useState<OneRepMaxResult | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
+  const resultRef = useRef<HTMLDivElement>(null);
 
   // Constants
   const MAX_WEIGHT_KG = 600;
   const MAX_WEIGHT_LBS = 1300;
   const MAX_REPS = 30;
+
+  const computeResult = (w: number, r: number, f: Formula): OneRepMaxResult => {
+    let oneRm = f === 'epley' ? w * (1 + r / 30) : w / (1.0278 - 0.0278 * r);
+    oneRm = Math.round(oneRm * 10) / 10;
+    const percentages = [95, 90, 85, 80, 75, 70, 65, 60, 55, 50].map((p) => ({
+      percentage: p,
+      weight: Math.round((oneRm * (p / 100)) * 10) / 10,
+    }));
+    return { oneRepMax: oneRm, percentages };
+  };
+
+  const scrollToResult = () => {
+    setTimeout(() => {
+      resultRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }, 50);
+  };
+
+  const handleUnitSwitch = (newUnit: Unit) => {
+    if (newUnit === unit) return;
+    if (weight !== '') {
+      const converted = newUnit === 'lbs'
+        ? Math.round(Number(weight) * 2.2046 * 10) / 10
+        : Math.round(Number(weight) / 2.2046 * 10) / 10;
+      setWeight(converted);
+    }
+    setUnit(newUnit);
+    setResult(null);
+    setCopied(false);
+  };
+
+  const handleFormulaSwitch = (newFormula: Formula) => {
+    setFormula(newFormula);
+    if (result && weight !== '' && reps !== '') {
+      setResult(computeResult(Number(weight), Number(reps), newFormula));
+    }
+  };
 
   const handleCalculate = () => {
     setError(null);
@@ -59,22 +97,9 @@ const Calculator: React.FC<CalculatorProps> = ({ title = '1RM Calculator' }) => 
       return;
     }
 
-    // 3. Calculation
-    let oneRm = 0;
-    if (formula === 'epley') {
-      oneRm = w * (1 + r / 30);
-    } else if (formula === 'brzycki') {
-      oneRm = w / (1.0278 - 0.0278 * r);
-    }
-
-    oneRm = Math.round(oneRm * 10) / 10;
-
-    const percentages = [95, 90, 85, 80, 75, 70, 65, 60, 55, 50].map((p) => ({
-      percentage: p,
-      weight: Math.round((oneRm * (p / 100)) * 10) / 10,
-    }));
-
-    setResult({ oneRepMax: oneRm, percentages });
+    // 3. Calculation + scroll to result
+    setResult(computeResult(w, r, formula));
+    scrollToResult();
   };
 
   const handleCopy = () => {
@@ -102,13 +127,13 @@ const Calculator: React.FC<CalculatorProps> = ({ title = '1RM Calculator' }) => 
       <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur opacity-30 animate-pulse"></div>
 
       <div className="relative bg-black/80 backdrop-blur-xl border border-white/10 p-6 sm:p-8 rounded-2xl shadow-2xl transition-all duration-500 ease-in-out">
-        <h2 className="text-3xl font-bold mb-8 text-center text-white tracking-tight">{title}</h2>
+        {title && <h2 className="text-3xl font-bold mb-8 text-center text-white tracking-tight">{title}</h2>}
 
         <div className="space-y-6">
           {/* Unit Switcher */}
           <div className="p-1 bg-gray-900/50 rounded-lg flex border border-white/5">
             <button
-              onClick={() => { setUnit('kg'); setResult(null); }}
+              onClick={() => handleUnitSwitch('kg')}
               className={`flex-1 py-2 text-sm font-semibold rounded-md transition-all duration-300 ${unit === 'kg'
                 ? 'bg-blue-600 text-white shadow-lg'
                 : 'text-gray-400 hover:text-white'
@@ -117,7 +142,7 @@ const Calculator: React.FC<CalculatorProps> = ({ title = '1RM Calculator' }) => 
               KG
             </button>
             <button
-              onClick={() => { setUnit('lbs'); setResult(null); }}
+              onClick={() => handleUnitSwitch('lbs')}
               className={`flex-1 py-2 text-sm font-semibold rounded-md transition-all duration-300 ${unit === 'lbs'
                 ? 'bg-blue-600 text-white shadow-lg'
                 : 'text-gray-400 hover:text-white'
@@ -185,28 +210,28 @@ const Calculator: React.FC<CalculatorProps> = ({ title = '1RM Calculator' }) => 
               <button
                 role="radio"
                 aria-checked={formula === 'epley'}
-                onClick={() => { setFormula('epley'); }}
+                onClick={() => handleFormulaSwitch('epley')}
                 className={`relative px-4 py-3 rounded-xl border text-left transition-all duration-200 group ${formula === 'epley'
                   ? 'border-blue-500/50 bg-blue-500/10'
                   : 'border-gray-800 bg-gray-900/30 hover:bg-gray-800'
                   }`}
               >
                 <div className={`text-sm font-semibold mb-1 ${formula === 'epley' ? 'text-blue-400' : 'text-gray-300 group-hover:text-white'}`}>Epley</div>
-                <div className="text-[10px] text-gray-500">Standard / accurate</div>
+                <div className="text-[10px] text-gray-500">Best for 3–10 reps</div>
                 {formula === 'epley' && <div className="absolute top-3 right-3 w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.5)]"></div>}
               </button>
 
               <button
                 role="radio"
                 aria-checked={formula === 'brzycki'}
-                onClick={() => { setFormula('brzycki'); }}
+                onClick={() => handleFormulaSwitch('brzycki')}
                 className={`relative px-4 py-3 rounded-xl border text-left transition-all duration-200 group ${formula === 'brzycki'
                   ? 'border-blue-500/50 bg-blue-500/10'
                   : 'border-gray-800 bg-gray-900/30 hover:bg-gray-800'
                   }`}
               >
                 <div className={`text-sm font-semibold mb-1 ${formula === 'brzycki' ? 'text-blue-400' : 'text-gray-300 group-hover:text-white'}`}>Brzycki</div>
-                <div className="text-[10px] text-gray-500">For variable reps</div>
+                <div className="text-[10px] text-gray-500">Conservative for 10+ reps</div>
                 {formula === 'brzycki' && <div className="absolute top-3 right-3 w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.5)]"></div>}
               </button>
             </div>
@@ -227,7 +252,7 @@ const Calculator: React.FC<CalculatorProps> = ({ title = '1RM Calculator' }) => 
 
         {/* Results Display */}
         {result && (
-          <div className="mt-8 animate-fade-in space-y-6 border-t border-gray-800 pt-8" aria-live="polite">
+          <div ref={resultRef} className="mt-8 animate-fade-in space-y-6 border-t border-gray-800 pt-8" aria-live="polite">
             <div className="relative group cursor-default">
               <div className="absolute -inset-2 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 rounded-lg opacity-20 group-hover:opacity-40 blur transition-opacity"></div>
               <div className="relative text-center">
@@ -292,6 +317,25 @@ const Calculator: React.FC<CalculatorProps> = ({ title = '1RM Calculator' }) => 
                 </>
               )}
             </button>
+
+            {/* Training Zone CTA */}
+            <div className="pt-4 border-t border-gray-800">
+              <p className="text-[10px] text-gray-500 uppercase tracking-wider font-semibold mb-3 text-center">Train with your 1RM</p>
+              <div className="grid grid-cols-3 gap-2">
+                <Link href="/training/hypertrophy" className="flex flex-col items-center gap-1 p-2 rounded-lg bg-gray-900/50 border border-gray-800 hover:border-green-800/60 hover:bg-green-900/10 transition-all group">
+                  <span className="text-xs font-bold text-green-400 group-hover:text-green-300">70%</span>
+                  <span className="text-[10px] text-gray-500 group-hover:text-gray-400">Hypertrophy</span>
+                </Link>
+                <Link href="/training/strength" className="flex flex-col items-center gap-1 p-2 rounded-lg bg-gray-900/50 border border-gray-800 hover:border-blue-800/60 hover:bg-blue-900/10 transition-all group">
+                  <span className="text-xs font-bold text-blue-400 group-hover:text-blue-300">85%</span>
+                  <span className="text-[10px] text-gray-500 group-hover:text-gray-400">Strength</span>
+                </Link>
+                <Link href="/training/peaking" className="flex flex-col items-center gap-1 p-2 rounded-lg bg-gray-900/50 border border-gray-800 hover:border-purple-800/60 hover:bg-purple-900/10 transition-all group">
+                  <span className="text-xs font-bold text-purple-400 group-hover:text-purple-300">95%</span>
+                  <span className="text-[10px] text-gray-500 group-hover:text-gray-400">Peaking</span>
+                </Link>
+              </div>
+            </div>
 
           </div>
         )}
