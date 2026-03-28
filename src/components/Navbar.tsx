@@ -2,12 +2,11 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-    const pathname = usePathname();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -16,11 +15,6 @@ const Navbar = () => {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
-
-    const navLinks = [
-        { name: 'Home', href: '/' },
-        { name: 'Guides', href: '/#guides' }, // Anchor for now, or link to a guides index if we had one
-    ];
 
     const calculators = [
         { name: 'Bench Press 1RM', href: '/bench-press-1rm-calculator', icon: '🏋️' },

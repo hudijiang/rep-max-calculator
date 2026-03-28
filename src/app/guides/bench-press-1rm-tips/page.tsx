@@ -7,6 +7,25 @@ export const metadata: Metadata = {
     title: 'Bench Press 1RM Tips | How to Increase Your Bench Press Max',
     description: 'Stuck at a plateau? Use these technical cues and a 6-week peaking program to increase your Bench Press 1RM safely and effectively.',
     keywords: ['increase bench press 1rm', 'bench press form tips', 'bench press program', 'powerlifting bench press', 'leg drive', 'bench press plateau'],
+    alternates: {
+        canonical: 'https://www.onerepmaxcalculator.org/guides/bench-press-1rm-tips',
+    },
+    openGraph: {
+        title: 'Bench Press 1RM Tips | How to Increase Your Bench Press Max',
+        description: 'Stuck at a plateau? Use these technical cues and a 6-week peaking program to increase your Bench Press 1RM safely and effectively.',
+        url: 'https://www.onerepmaxcalculator.org/guides/bench-press-1rm-tips',
+        siteName: '1RM Calculator',
+        type: 'article',
+        images: [{
+            url: 'https://www.onerepmaxcalculator.org/generated/bench_press_setup_dark.png',
+            alt: 'Bench Press Setup Guide',
+        }],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'How to Increase Your Bench Press 1RM',
+        description: 'Technical cues and a 6-week peaking program to break through your bench press plateau.',
+    },
 };
 
 import ArticleSchema from '@/components/ArticleSchema';
@@ -17,6 +36,7 @@ export default function BenchTipsPage() {
             <ArticleSchema
                 title="Bench Press 1RM Tips | How to Increase Your Bench Press Max"
                 description="Stuck at a plateau? Use these technical cues and a 6-week peaking program to increase your Bench Press 1RM safely and effectively."
+                pageUrl="https://www.onerepmaxcalculator.org/guides/bench-press-1rm-tips"
                 imageUrl="https://www.onerepmaxcalculator.org/generated/bench_press_setup_dark.png"
                 datePublished="2024-01-01"
             />
