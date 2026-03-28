@@ -374,9 +374,17 @@ export default function Home() {
             <p className="text-gray-600 text-sm mb-4">
               Built for athletes who demand precision. &copy; {new Date().getFullYear()}
             </p>
-            <p className="text-gray-700 text-xs">
+            <p className="text-gray-700 text-xs mb-4">
               Perfect for calculating 1RM for Bench Press, Squat, and Deadlift.
             </p>
+            <div className="flex justify-center gap-6">
+              <a href="https://randomhubs.com" target="_blank" rel="noopener" className="text-xs text-gray-600 hover:text-gray-400 transition-colors">
+                Free Random Generators — RandomHubs
+              </a>
+              <a href="https://calcquick.net" target="_blank" rel="noopener" className="text-xs text-gray-600 hover:text-gray-400 transition-colors">
+                Free Online Calculators — CalcQuick
+              </a>
+            </div>
           </div>
         </footer>
       </div>
