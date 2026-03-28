@@ -19,6 +19,12 @@ export const metadata: Metadata = {
         siteName: '1RM Calculator',
         locale: 'en_US',
         type: 'website',
+        images: [{ url: 'https://www.onerepmaxcalculator.org/opengraph-image', width: 1200, height: 630 }],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Bench Press 1RM Calculator',
+        description: 'Calculate your true Bench Press max from a safer 5-rep set. Free tool with percentage training charts.',
     },
 };
 
@@ -28,7 +34,19 @@ export default function BenchPressCalculatorPage() {
             <ArticleSchema
                 title="Bench Press 1RM Calculator | Accurate Chest Strength Estimate"
                 description="Calculate your Bench Press One Rep Max safely. Optimized for powerlifting and bodybuilding chest training."
+                pageUrl="https://www.onerepmaxcalculator.org/bench-press-1rm-calculator"
                 datePublished="2024-01-01"
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                    '@context': 'https://schema.org',
+                    '@type': 'BreadcrumbList',
+                    itemListElement: [
+                        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.onerepmaxcalculator.org' },
+                        { '@type': 'ListItem', position: 2, name: 'Bench Press 1RM Calculator', item: 'https://www.onerepmaxcalculator.org/bench-press-1rm-calculator' },
+                    ],
+                }) }}
             />
 
             <div className="fixed inset-0 z-0 pointer-events-none">

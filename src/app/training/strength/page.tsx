@@ -6,6 +6,22 @@ export const metadata: Metadata = {
     title: 'Strength Training Program (85% 1RM) | Max Strength Guide',
     description: 'Build raw strength with the 85-90% 1RM zone. A complete guide to strength blocks, low-rep training, and CNS adaptation for powerlifters.',
     keywords: ['strength training program', 'powerlifting routine', 'increase bench press', '85% 1rm', 'strength block', 'low rep training', 'CNS adaptation'],
+    alternates: {
+        canonical: 'https://www.onerepmaxcalculator.org/training/strength',
+    },
+    openGraph: {
+        title: 'Strength Training Program (85% 1RM) | Max Strength Guide',
+        description: 'Build raw strength with the 85-90% 1RM zone. A complete guide to strength blocks, low-rep training, and CNS adaptation for powerlifters.',
+        url: 'https://www.onerepmaxcalculator.org/training/strength',
+        siteName: '1RM Calculator',
+        type: 'article',
+        images: [{ url: 'https://www.onerepmaxcalculator.org/opengraph-image', width: 1200, height: 630 }],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Strength Training Program (85% 1RM)',
+        description: 'A complete guide to strength blocks, low-rep training, and CNS adaptation for powerlifters.',
+    },
 };
 
 import ArticleSchema from '@/components/ArticleSchema';
@@ -16,6 +32,7 @@ export default function StrengthPage() {
             <ArticleSchema
                 title="Strength Training Program (85% 1RM) | Max Strength Guide"
                 description="The core of powerlifting. Train in the 85% 1RM zone to maximize force production and neural efficiency. Includes 5x5 programming structure."
+                pageUrl="https://www.onerepmaxcalculator.org/training/strength"
                 datePublished="2024-01-01"
             />
 

@@ -19,6 +19,12 @@ export const metadata: Metadata = {
         siteName: '1RM Calculator',
         locale: 'en_US',
         type: 'website',
+        images: [{ url: 'https://www.onerepmaxcalculator.org/opengraph-image', width: 1200, height: 630 }],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Deadlift 1RM Calculator',
+        description: 'Estimate your Conventional or Sumo Deadlift max without CNS-draining singles. Free 1RM tool.',
     },
 };
 
@@ -28,7 +34,19 @@ export default function DeadliftCalculatorPage() {
             <ArticleSchema
                 title="Deadlift 1RM Calculator | Calculate Your Max Pull Safely"
                 description="Specialized Deadlift 1RM calculator. Estimate your one rep max for Conventional and Sumo deadlifts without testing failure."
+                pageUrl="https://www.onerepmaxcalculator.org/deadlift-1rm-calculator"
                 datePublished="2024-01-01"
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                    '@context': 'https://schema.org',
+                    '@type': 'BreadcrumbList',
+                    itemListElement: [
+                        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.onerepmaxcalculator.org' },
+                        { '@type': 'ListItem', position: 2, name: 'Deadlift 1RM Calculator', item: 'https://www.onerepmaxcalculator.org/deadlift-1rm-calculator' },
+                    ],
+                }) }}
             />
 
             <div className="fixed inset-0 z-0 pointer-events-none">
@@ -97,11 +115,11 @@ export default function DeadliftCalculatorPage() {
                         <div className="grid md:grid-cols-2 gap-6 not-prose my-6">
                             <div className="bg-gray-900/30 p-4 rounded-xl border border-gray-800">
                                 <h4 className="text-white font-bold mb-2">Weak off the Floor?</h4>
-                                <p className="text-sm text-gray-400">Incorporated **Deficit Deadlifts** (1-2 inches) and **Paused Deadlifts** (pause at shin).</p>
+                                <p className="text-sm text-gray-400">Incorporate <strong>Deficit Deadlifts</strong> (1-2 inches) and <strong>Paused Deadlifts</strong> (pause at shin).</p>
                             </div>
                             <div className="bg-gray-900/30 p-4 rounded-xl border border-gray-800">
                                 <h4 className="text-white font-bold mb-2">Weak at Lockout?</h4>
-                                <p className="text-sm text-gray-400">Add **Block Pulls**, **Rack Pulls**, and **Glute Bridges** to strengthen the hips and upper back.</p>
+                                <p className="text-sm text-gray-400">Add <strong>Block Pulls</strong>, <strong>Rack Pulls</strong>, and <strong>Glute Bridges</strong> to strengthen the hips and upper back.</p>
                             </div>
                         </div>
 

@@ -6,6 +6,22 @@ export const metadata: Metadata = {
     title: 'Periodization for Powerlifting: A Practical Guide | 1RM Calculator',
     description: 'Master the science of periodization. Learn how to structure microcycles, mesocycles, and macrocycles using your One Rep Max for continuous progress.',
     keywords: ['periodization for powerlifting', 'strength training cycles', 'mesocycle examples', 'macrocycle planning', 'linear periodization', 'block periodization'],
+    alternates: {
+        canonical: 'https://www.onerepmaxcalculator.org/training/periodization',
+    },
+    openGraph: {
+        title: 'Periodization for Powerlifting: A Practical Guide | 1RM Calculator',
+        description: 'Master the science of periodization. Learn how to structure microcycles, mesocycles, and macrocycles using your One Rep Max for continuous progress.',
+        url: 'https://www.onerepmaxcalculator.org/training/periodization',
+        siteName: '1RM Calculator',
+        type: 'article',
+        images: [{ url: 'https://www.onerepmaxcalculator.org/opengraph-image', width: 1200, height: 630 }],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Periodization for Powerlifting: A Practical Guide',
+        description: 'Structure your training blocks using 1RM percentages for long-term strength gains.',
+    },
 };
 
 import ArticleSchema from '@/components/ArticleSchema';
@@ -16,6 +32,7 @@ export default function PeriodizationPage() {
             <ArticleSchema
                 title="Periodization for Powerlifting: A Practical Guide"
                 description="Master the art of periodization. Learn how to structure your training blocks (Hypertrophy, Strength, Peaking) based on 1RM percentages for long-term gains."
+                pageUrl="https://www.onerepmaxcalculator.org/training/periodization"
                 datePublished="2024-01-01"
             />
 

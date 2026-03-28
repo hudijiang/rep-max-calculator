@@ -3,9 +3,25 @@ import type { Metadata } from 'next';
 import Disclaimer from '@/components/Disclaimer';
 
 export const metadata: Metadata = {
-    title: 'Beginner’s Guide to 1RM – Safe One Rep Max Testing for New Lifters',
-    description: 'New to lifting? Learn strictly safe methods to estimate your 1RM, avoid injury, and start a 1RM-based beginner program.',
+    title: "Beginner's Guide to 1RM - Safe One Rep Max Testing for New Lifters",
+    description: "New to lifting? Learn strictly safe methods to estimate your 1RM, avoid injury, and start a 1RM-based beginner program.",
     keywords: ['beginner 1rm guide', 'how to test 1rm safely', 'estimate 1rm', 'beginner strength program', '1rm calculator guide'],
+    alternates: {
+        canonical: 'https://www.onerepmaxcalculator.org/guides/beginner-1rm-guide',
+    },
+    openGraph: {
+        title: "Beginner's Guide to 1RM - Safe One Rep Max Testing for New Lifters",
+        description: "New to lifting? Learn strictly safe methods to estimate your 1RM, avoid injury, and start a 1RM-based beginner program.",
+        url: 'https://www.onerepmaxcalculator.org/guides/beginner-1rm-guide',
+        siteName: '1RM Calculator',
+        type: 'article',
+        images: [{ url: 'https://www.onerepmaxcalculator.org/opengraph-image', width: 1200, height: 630 }],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: "Beginner's Guide to 1RM Testing",
+        description: "Safe methods to estimate your 1RM without risking injury, plus a starter strength program.",
+    },
 };
 
 import ArticleSchema from '@/components/ArticleSchema';
@@ -14,8 +30,9 @@ export default function BeginnerGuidePage() {
     return (
         <main className="min-h-screen bg-[#050505] text-gray-200 font-sans selection:bg-blue-600 selection:text-white overflow-hidden pb-20">
             <ArticleSchema
-                title="Beginner’s Guide to 1RM – Safe One Rep Max Testing for New Lifters"
+                title="Beginner's Guide to 1RM – Safe One Rep Max Testing for New Lifters"
                 description="New to lifting? Don't test your 1RM yet. Learn how to safely estimate your max using the 3-5 rep range method and build a solid foundation."
+                pageUrl="https://www.onerepmaxcalculator.org/guides/beginner-1rm-guide"
                 datePublished="2024-01-01"
             />
 
@@ -40,7 +57,7 @@ export default function BeginnerGuidePage() {
                         <span className="text-sm font-medium text-blue-300">New Lifter's Handbook</span>
                     </div>
                     <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
-                        Beginner’s Guide to <br />
+                        Beginner's Guide to <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-400">1RM Testing</span>
                     </h1>
                     <p className="text-xl text-gray-400 leading-relaxed max-w-2xl">

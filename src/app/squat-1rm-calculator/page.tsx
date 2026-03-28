@@ -19,6 +19,12 @@ export const metadata: Metadata = {
         siteName: '1RM Calculator',
         locale: 'en_US',
         type: 'website',
+        images: [{ url: 'https://www.onerepmaxcalculator.org/opengraph-image', width: 1200, height: 630 }],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Squat 1RM Calculator',
+        description: 'Estimate your High Bar or Low Bar Squat max from a safe sub-maximal set. Free percentage charts included.',
     },
 };
 
@@ -28,7 +34,19 @@ export default function SquatCalculatorPage() {
             <ArticleSchema
                 title="Squat 1RM Calculator | Leg Strength & Max Estimate"
                 description="Accurate Squat 1RM calculator for High Bar and Low Bar squats. Determine your leg strength potential and planned working sets safely."
+                pageUrl="https://www.onerepmaxcalculator.org/squat-1rm-calculator"
                 datePublished="2024-01-01"
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                    '@context': 'https://schema.org',
+                    '@type': 'BreadcrumbList',
+                    itemListElement: [
+                        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.onerepmaxcalculator.org' },
+                        { '@type': 'ListItem', position: 2, name: 'Squat 1RM Calculator', item: 'https://www.onerepmaxcalculator.org/squat-1rm-calculator' },
+                    ],
+                }) }}
             />
 
             <div className="fixed inset-0 z-0 pointer-events-none">

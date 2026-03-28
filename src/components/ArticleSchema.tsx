@@ -3,6 +3,7 @@ import React from 'react';
 interface ArticleSchemaProps {
     title: string;
     description: string;
+    pageUrl?: string;
     datePublished?: string;
     authorName?: string;
     imageUrl?: string;
@@ -11,11 +12,13 @@ interface ArticleSchemaProps {
 const ArticleSchema: React.FC<ArticleSchemaProps> = ({
     title,
     description,
+    pageUrl,
     datePublished = new Date().toISOString(),
     authorName = '1RM Calculator Team',
-    imageUrl = 'https://www.onerepmaxcalculator.org/og-image.jpg', // Default fallback
+    imageUrl,
 }) => {
-    const schema = {
+    const schema: Record<string, unknown> = {
+        '@context': 'https://schema.org',
         '@type': 'Article',
         headline: title,
         description: description,
@@ -27,18 +30,17 @@ const ArticleSchema: React.FC<ArticleSchemaProps> = ({
         publisher: {
             '@type': 'Organization',
             name: '1RM Calculator',
-            logo: {
-                '@type': 'ImageObject',
-                url: 'https://www.onerepmaxcalculator.org/logo.png',
-            },
+            url: 'https://www.onerepmaxcalculator.org',
         },
-        image: imageUrl,
+        ...(imageUrl && { image: imageUrl }),
         datePublished: datePublished,
         dateModified: new Date().toISOString(),
-        mainEntityOfPage: {
-            '@type': 'WebPage',
-            '@id': 'https://www.onerepmaxcalculator.org',
-        },
+        ...(pageUrl && {
+            mainEntityOfPage: {
+                '@type': 'WebPage',
+                '@id': pageUrl,
+            },
+        }),
     };
 
     return (

@@ -6,6 +6,22 @@ export const metadata: Metadata = {
     title: 'Peaking Program & 1RM Testing (95% 1RM) | Strength Training',
     description: 'How to peak for a powerlifting competition or 1RM test day. Learn the art of tapering, intensity management, and testing your true max safely.',
     keywords: ['peaking program', 'powerlifting taper', '1rm test day', 'peaking for competition', '95% 1rm', 'heavy singles'],
+    alternates: {
+        canonical: 'https://www.onerepmaxcalculator.org/training/peaking',
+    },
+    openGraph: {
+        title: 'Peaking Program & 1RM Testing (95% 1RM) | Strength Training',
+        description: 'How to peak for a powerlifting competition or 1RM test day. Learn the art of tapering, intensity management, and testing your true max safely.',
+        url: 'https://www.onerepmaxcalculator.org/training/peaking',
+        siteName: '1RM Calculator',
+        type: 'article',
+        images: [{ url: 'https://www.onerepmaxcalculator.org/opengraph-image', width: 1200, height: 630 }],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Peaking Program & 1RM Testing (95% 1RM)',
+        description: 'Learn how to taper volume and peak to your true 1RM for competition or test day.',
+    },
 };
 
 import ArticleSchema from '@/components/ArticleSchema';
@@ -16,6 +32,7 @@ export default function PeakingPage() {
             <ArticleSchema
                 title="Peaking Program & 1RM Testing (95% 1RM) | Strength Training"
                 description="The final countdown. Learn how to taper volume and increase intensity to 95%+ 1RM to dominate your competition or test day."
+                pageUrl="https://www.onerepmaxcalculator.org/training/peaking"
                 datePublished="2024-01-01"
             />
 

@@ -7,6 +7,22 @@ export const metadata: Metadata = {
     title: 'Hypertrophy Training Program (70-80% 1RM) | Muscle Growth Guide',
     description: 'The ultimate guide to hypertrophy training. Learn why 8-12 reps at 70-80% 1RM is best for muscle growth, with sample workout routines and science-based programming.',
     keywords: ['hypertrophy training', 'muscle growth program', 'bodybuilding routines', '70% 1rm', 'rep ranges for mass', 'volume training'],
+    alternates: {
+        canonical: 'https://www.onerepmaxcalculator.org/training/hypertrophy',
+    },
+    openGraph: {
+        title: 'Hypertrophy Training Program (70-80% 1RM) | Muscle Growth Guide',
+        description: 'The ultimate guide to hypertrophy training. Learn why 8-12 reps at 70-80% 1RM is best for muscle growth, with sample workout routines and science-based programming.',
+        url: 'https://www.onerepmaxcalculator.org/training/hypertrophy',
+        siteName: '1RM Calculator',
+        type: 'article',
+        images: [{ url: 'https://www.onerepmaxcalculator.org/opengraph-image', width: 1200, height: 630 }],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Hypertrophy Training Program (70-80% 1RM)',
+        description: 'Science-based hypertrophy guide using 8-12 reps at 70-80% 1RM for maximum muscle growth.',
+    },
 };
 
 import ArticleSchema from '@/components/ArticleSchema';
@@ -17,6 +33,7 @@ export default function HypertrophyPage() {
             <ArticleSchema
                 title="Hypertrophy Training Program (70-80% 1RM) | Muscle Growth Guide"
                 description="The ultimate guide to hypertrophy training. Learn why 8-12 reps at 70-80% 1RM is best for muscle growth, with sample workout routines and science-based programming."
+                pageUrl="https://www.onerepmaxcalculator.org/training/hypertrophy"
                 datePublished="2024-01-01"
             />
 

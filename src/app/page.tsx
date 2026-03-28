@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     siteName: '1RM Calculator',
     locale: 'en_US',
     type: 'website',
+    images: [{ url: 'https://www.onerepmaxcalculator.org/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -32,11 +33,6 @@ export default function Home() {
     'name': 'One Rep Max Calculator',
     "applicationCategory": "HealthApplication",
     "operatingSystem": "Any",
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "ratingCount": "1250"
-    },
     "offers": {
       "@type": "Offer",
       "price": "0",
@@ -108,11 +104,6 @@ export default function Home() {
 
           {/* Simplified Header */}
           <div className="text-center space-y-6 animate-fade-in-up">
-            <div className="inline-flex items-center space-x-2 bg-blue-900/20 border border-blue-800/50 rounded-full px-4 py-1.5 backdrop-blur-sm">
-              <span className="flex h-2 w-2 rounded-full bg-blue-500 animate-pulse"></span>
-              <span className="text-sm font-medium text-blue-300">New Formula Update</span>
-            </div>
-
             <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-tight text-white mb-2">
               One Rep Max <br className="hidden sm:block" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-purple-600">
@@ -127,7 +118,23 @@ export default function Home() {
 
           {/* Calculator - Centered Focal Point */}
           <div className="w-full max-w-md lg:max-w-lg transform hover:scale-[1.01] transition-transform duration-500">
-            <Calculator />
+            <Calculator title="" />
+          </div>
+
+          {/* Lift-specific Calculator Links */}
+          <div className="grid grid-cols-3 gap-3 w-full max-w-md lg:max-w-lg">
+            <Link href="/bench-press-1rm-calculator" className="group flex flex-col items-center gap-2 p-4 bg-black/40 border border-gray-800 hover:border-blue-700/50 hover:bg-blue-900/10 rounded-xl transition-all text-center">
+              <span className="text-2xl">🏋️</span>
+              <span className="text-xs font-semibold text-gray-400 group-hover:text-blue-400 transition-colors leading-tight">Bench Press</span>
+            </Link>
+            <Link href="/squat-1rm-calculator" className="group flex flex-col items-center gap-2 p-4 bg-black/40 border border-gray-800 hover:border-green-700/50 hover:bg-green-900/10 rounded-xl transition-all text-center">
+              <span className="text-2xl">🦵</span>
+              <span className="text-xs font-semibold text-gray-400 group-hover:text-green-400 transition-colors leading-tight">Squat</span>
+            </Link>
+            <Link href="/deadlift-1rm-calculator" className="group flex flex-col items-center gap-2 p-4 bg-black/40 border border-gray-800 hover:border-purple-700/50 hover:bg-purple-900/10 rounded-xl transition-all text-center">
+              <span className="text-2xl">💪</span>
+              <span className="text-xs font-semibold text-gray-400 group-hover:text-purple-400 transition-colors leading-tight">Deadlift</span>
+            </Link>
           </div>
 
           {/* Scroll Indicator */}
