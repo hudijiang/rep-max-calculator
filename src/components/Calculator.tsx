@@ -318,23 +318,48 @@ const Calculator: React.FC<CalculatorProps> = ({ title = '1RM Calculator' }) => 
               )}
             </button>
 
-            {/* Training Zone CTA */}
-            <div className="pt-4 border-t border-gray-800">
-              <p className="text-[10px] text-gray-500 uppercase tracking-wider font-semibold mb-3 text-center">Train with your 1RM</p>
-              <div className="grid grid-cols-3 gap-2">
-                <Link href="/training/hypertrophy" className="flex flex-col items-center gap-1 p-2 rounded-lg bg-gray-900/50 border border-gray-800 hover:border-green-800/60 hover:bg-green-900/10 transition-all group">
-                  <span className="text-xs font-bold text-green-400 group-hover:text-green-300">70%</span>
-                  <span className="text-[10px] text-gray-500 group-hover:text-gray-400">Hypertrophy</span>
-                </Link>
-                <Link href="/training/strength" className="flex flex-col items-center gap-1 p-2 rounded-lg bg-gray-900/50 border border-gray-800 hover:border-blue-800/60 hover:bg-blue-900/10 transition-all group">
-                  <span className="text-xs font-bold text-blue-400 group-hover:text-blue-300">85%</span>
-                  <span className="text-[10px] text-gray-500 group-hover:text-gray-400">Strength</span>
-                </Link>
-                <Link href="/training/peaking" className="flex flex-col items-center gap-1 p-2 rounded-lg bg-gray-900/50 border border-gray-800 hover:border-purple-800/60 hover:bg-purple-900/10 transition-all group">
-                  <span className="text-xs font-bold text-purple-400 group-hover:text-purple-300">95%</span>
-                  <span className="text-[10px] text-gray-500 group-hover:text-gray-400">Peaking</span>
-                </Link>
+            {/* Training Prescription */}
+            <div className="pt-4 border-t border-gray-800 space-y-3">
+              <div className="text-center">
+                <p className="text-sm font-bold text-white mb-1">Your Training Prescription</p>
+                <p className="text-[11px] text-gray-500">Based on your {result.oneRepMax} {unit} — click a goal to see your full program</p>
               </div>
+              <Link href="/training/hypertrophy" className="flex items-center gap-3 p-3 rounded-xl bg-green-900/10 border border-green-900/40 hover:border-green-700/60 hover:bg-green-900/20 transition-all group">
+                <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-green-900/30 flex flex-col items-center justify-center">
+                  <span className="text-[10px] font-bold text-green-400">70%</span>
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm font-bold text-green-300">Muscle Growth</span>
+                    <span className="text-sm font-bold text-white">{Math.round(result.oneRepMax * 0.7 * 10) / 10} {unit}</span>
+                  </div>
+                  <p className="text-[10px] text-gray-500 mt-0.5">8–12 reps · Hypertrophy training guide →</p>
+                </div>
+              </Link>
+              <Link href="/training/strength" className="flex items-center gap-3 p-3 rounded-xl bg-blue-900/10 border border-blue-900/40 hover:border-blue-700/60 hover:bg-blue-900/20 transition-all group">
+                <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-blue-900/30 flex flex-col items-center justify-center">
+                  <span className="text-[10px] font-bold text-blue-400">85%</span>
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm font-bold text-blue-300">Strength Building</span>
+                    <span className="text-sm font-bold text-white">{Math.round(result.oneRepMax * 0.85 * 10) / 10} {unit}</span>
+                  </div>
+                  <p className="text-[10px] text-gray-500 mt-0.5">3–5 reps · Strength training guide →</p>
+                </div>
+              </Link>
+              <Link href="/training/peaking" className="flex items-center gap-3 p-3 rounded-xl bg-purple-900/10 border border-purple-900/40 hover:border-purple-700/60 hover:bg-purple-900/20 transition-all group">
+                <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-purple-900/30 flex flex-col items-center justify-center">
+                  <span className="text-[10px] font-bold text-purple-400">95%</span>
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm font-bold text-purple-300">Competition Peaking</span>
+                    <span className="text-sm font-bold text-white">{Math.round(result.oneRepMax * 0.95 * 10) / 10} {unit}</span>
+                  </div>
+                  <p className="text-[10px] text-gray-500 mt-0.5">1–3 reps · Peaking program guide →</p>
+                </div>
+              </Link>
             </div>
 
           </div>

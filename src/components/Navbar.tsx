@@ -22,6 +22,13 @@ const Navbar = () => {
         { name: 'Deadlift 1RM', href: '/deadlift-1rm-calculator', icon: '💪' },
     ];
 
+    const trainingPlans = [
+        { name: 'Hypertrophy', href: '/training/hypertrophy', icon: '💪', desc: 'Muscle Growth' },
+        { name: 'Strength', href: '/training/strength', icon: '🏆', desc: 'Force Production' },
+        { name: 'Peaking', href: '/training/peaking', icon: '🎯', desc: 'Max Effort' },
+        { name: 'Periodization', href: '/training/periodization', icon: '📅', desc: 'Long-term Planning' },
+    ];
+
     return (
         <header
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-black/80 backdrop-blur-lg border-b border-white/10' : 'bg-transparent'
@@ -43,6 +50,39 @@ const Navbar = () => {
                         <Link href="/guides/beginner-1rm-guide" className="text-sm font-medium text-gray-300 hover:text-white transition-colors">
                             Guides
                         </Link>
+
+                        {/* Training Plans Dropdown */}
+                        <div className="relative group">
+                            <button className="flex items-center gap-1 text-sm font-medium text-gray-300 group-hover:text-white transition-colors py-2 focus:outline-none">
+                                Training Plans
+                                <svg
+                                    className="w-4 h-4 transition-transform group-hover:rotate-180"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <div className="absolute top-full right-0 pt-4 w-64 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200">
+                                <div className="bg-[#0A0A0A]/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden p-2">
+                                    <div className="px-3 py-2 text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Training Plans</div>
+                                    {trainingPlans.map((item) => (
+                                        <Link
+                                            key={item.name}
+                                            href={item.href}
+                                            className="flex items-center gap-3 px-3 py-3 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white rounded-xl transition-all group/item"
+                                        >
+                                            <span className="text-xl group-hover/item:scale-110 transition-transform">{item.icon}</span>
+                                            <div>
+                                                <div className="text-gray-200 group-hover/item:text-blue-400 transition-colors">{item.name}</div>
+                                                <div className="text-xs text-gray-600">{item.desc}</div>
+                                            </div>
+                                        </Link>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
 
                         {/* Calculators Dropdown */}
                         <div className="relative group">
@@ -112,6 +152,21 @@ const Navbar = () => {
                     >
                         Guides
                     </Link>
+                    <div className="space-y-2 pt-2 border-t border-gray-800">
+                        <p className="text-xs font-bold text-gray-500 uppercase tracking-wider">Training Plans</p>
+                        {trainingPlans.map((item) => (
+                            <Link
+                                key={item.name}
+                                href={item.href}
+                                className="flex items-center gap-3 py-2 text-sm text-gray-300 hover:text-blue-400"
+                                onClick={() => setMobileMenuOpen(false)}
+                            >
+                                <span>{item.icon}</span>
+                                <span>{item.name}</span>
+                                <span className="text-xs text-gray-600 ml-auto">{item.desc}</span>
+                            </Link>
+                        ))}
+                    </div>
                     <div className="space-y-2 pt-2 border-t border-gray-800">
                         <p className="text-xs font-bold text-gray-500 uppercase tracking-wider">Calculators</p>
                         {calculators.map((item) => (

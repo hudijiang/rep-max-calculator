@@ -146,6 +146,48 @@ export default function Home() {
       <div id="details" className="relative z-10 bg-black/40 backdrop-blur-sm border-t border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 space-y-24">
 
+          {/* Featured Guides */}
+          <section>
+            <div className="text-center mb-10">
+              <p className="text-xs font-bold text-blue-500 uppercase tracking-widest mb-3">Got your 1RM? Here&apos;s what to do next</p>
+              <h2 className="text-3xl font-bold text-white">Turn Your Number Into a Plan</h2>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+              <Link href="/training/hypertrophy" className="group flex flex-col gap-3 p-5 bg-gray-900/40 border border-gray-800 hover:border-green-800/60 hover:bg-green-900/10 rounded-2xl transition-all">
+                <div className="w-10 h-10 rounded-xl bg-green-500/10 flex items-center justify-center text-lg font-bold text-green-400 group-hover:scale-110 transition-transform">💪</div>
+                <div>
+                  <h3 className="font-bold text-white group-hover:text-green-300 transition-colors mb-1">Hypertrophy</h3>
+                  <p className="text-xs text-gray-500 leading-relaxed">Build muscle using 70–80% of your 1RM with 8–12 rep sets.</p>
+                </div>
+                <span className="text-xs text-green-500 font-semibold mt-auto">Read guide →</span>
+              </Link>
+              <Link href="/training/strength" className="group flex flex-col gap-3 p-5 bg-gray-900/40 border border-gray-800 hover:border-blue-800/60 hover:bg-blue-900/10 rounded-2xl transition-all">
+                <div className="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center text-lg font-bold text-blue-400 group-hover:scale-110 transition-transform">🏆</div>
+                <div>
+                  <h3 className="font-bold text-white group-hover:text-blue-300 transition-colors mb-1">Strength Training</h3>
+                  <p className="text-xs text-gray-500 leading-relaxed">Build raw strength at 85%+ 1RM with low-rep, high-intensity sets.</p>
+                </div>
+                <span className="text-xs text-blue-500 font-semibold mt-auto">Read guide →</span>
+              </Link>
+              <Link href="/training/peaking" className="group flex flex-col gap-3 p-5 bg-gray-900/40 border border-gray-800 hover:border-purple-800/60 hover:bg-purple-900/10 rounded-2xl transition-all">
+                <div className="w-10 h-10 rounded-xl bg-purple-500/10 flex items-center justify-center text-lg font-bold text-purple-400 group-hover:scale-110 transition-transform">🎯</div>
+                <div>
+                  <h3 className="font-bold text-white group-hover:text-purple-300 transition-colors mb-1">Competition Peaking</h3>
+                  <p className="text-xs text-gray-500 leading-relaxed">Peak for a meet — hit 95%+ 1RM with precision on meet day.</p>
+                </div>
+                <span className="text-xs text-purple-500 font-semibold mt-auto">Read guide →</span>
+              </Link>
+              <Link href="/guides/beginner-1rm-guide" className="group flex flex-col gap-3 p-5 bg-gray-900/40 border border-gray-800 hover:border-orange-800/60 hover:bg-orange-900/10 rounded-2xl transition-all">
+                <div className="w-10 h-10 rounded-xl bg-orange-500/10 flex items-center justify-center text-lg font-bold text-orange-400 group-hover:scale-110 transition-transform">📖</div>
+                <div>
+                  <h3 className="font-bold text-white group-hover:text-orange-300 transition-colors mb-1">Beginner&apos;s Guide</h3>
+                  <p className="text-xs text-gray-500 leading-relaxed">New to 1RM testing? Learn how to test safely and accurately.</p>
+                </div>
+                <span className="text-xs text-orange-500 font-semibold mt-auto">Read guide →</span>
+              </Link>
+            </div>
+          </section>
+
           {/* Intro Text (Moved from Hero) */}
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
